@@ -1,0 +1,27 @@
+{
+  "name": "backend-jewel",
+  "version": "1.0.0",
+  "description": "WELLCOM JEWELRY SHOP",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node sever.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hoa105/TTCS.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Ngo Hoa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hoa105/TTCS/issues"
+  },
+  "homepage": "https://github.com/Hoa105/TTCS#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
