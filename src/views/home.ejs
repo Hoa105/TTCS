@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<style>
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color: rgb(240, 231, 227);}
+</style>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/creat">Creat User</a>
+        <a href = "/products">Products</a>
+        
+    </div>
+    <div class="container">
+        <!-- <%= JSON.stringify(listUsers) %> -->
+        <div>User List</div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+
+            <% listUsers.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.phone %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td><%= user.address %></td>
+                    
+                    <td>
+                        <a href = '/update/<%= user.id %>'>Edit</a>
+                        <form action="/delete-user/<%= user.id %>" method="post">
+                            <!-- <r" method="post"> -->
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+                
+        </table>
+    </div>
+</body>
+</html>

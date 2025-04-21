@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<style>
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color: rgb(240, 231, 227);}
+</style>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/creat">Creat User</a>
+        <a class="active" href = "/products">Products</a>
+        
+    </div>
+    <div class="container">
+        <div>Products List</div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Materio</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+            
+            <% listProducts.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.description %></td>
+                    <td><%= user.price %></td>
+                    <td><%= user.material %></td>
+                    <td><%= user.category %></td>
+                    <td><%= user.image %></td>
+                    <td>
+                        <a href = '/update-product/<%= user.id %>'>Edit</a>
+                        <form action="/delete-product/<%= user.id %>" method="post">
+                            
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+                
+        </table>
+    </div>
+</body>
+</html>
